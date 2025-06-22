@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components {
+    .container {
+        @apply flex p-4 justify-between items-center w-full max-w-full m-4
+    }
+}
