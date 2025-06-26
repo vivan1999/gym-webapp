@@ -1,6 +1,5 @@
 import React from 'react'
 import AppBar from '@mui/material/AppBar'
-import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import { CiMenuFries } from 'react-icons/ci'
@@ -11,6 +10,15 @@ import MenuItem from '@mui/material/MenuItem'
 import { useState } from 'react'
 import Drawer from '@mui/material/Drawer'
 import { navLinks } from '../../constants'
+import Box from '@mui/material/Box'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemText from '@mui/material/ListItemText'
+import SvgIcon from '@mui/material/SvgIcon'
+import logo from '../../assets/logo.png'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import { IoIosArrowForward } from "react-icons/io";
 
 const Navbar = () => {
     const [anchorEl, setAnchorEl] = useState(null)
@@ -28,9 +36,11 @@ const Navbar = () => {
     }
 
     return (
-        <AppBar position="sticky" sx={{ backgroundColor: "black", padding: 3 }}>
+        <AppBar position="sticky" sx={{ backgroundColor: "#0f1923", padding: 1 }}>
             <div className='flex justify-between items-center w-full max-w-full'>
-                <div><Typography color='primary'>Classic Health</Typography></div>
+                <div className='flex items-center w-[10vh] h-[8vh] md:w-[10vw] overflow-hidden'>
+                    <img className='w-full h-full object-cover' src={logo} />
+                </div>
                 <div className='gap-6 hidden lg:flex'>
                     <ul className='flex gap-6'>{navLinks.map((nav) => {
                         return <li><a href={nav.href}><Typography color='primary'>{nav.name}</Typography></a></li>
@@ -58,21 +68,34 @@ const Navbar = () => {
                         <CiMenuFries color='white' />
                     </IconButton>
                     <Drawer anchor='right' open={openDrawer} onClose={handleDrawer}>
-                        <div className='w-[30vw]'>
-                            <Container sx={{ padding: 4 }}>
+
+                        <Box className='w-[70vw] h-full' role="presentation" sx={{ background: '#0f1923' }} >
+                            <div className='flex items-center w-full h-[10.5vh] sm:h-[30vh] m-2'>
+                                <img className='w-full h-full object-cover' src={logo} />
+                            </div>
+                            <List sx={{ paddingTop: 5 }}>
                                 <div className='flex items-center'>
                                     <IconButton>
-                                        <MdAccountCircle color='black' />
+                                        <SvgIcon color='primary' >
+                                            <MdAccountCircle />
+                                        </SvgIcon>
                                     </IconButton>
                                     <Typography>Login/Sign Up</Typography>
                                 </div>
-                                <div>
-                                    <ul className='flex flex-col gap-6'>{navLinks.map((nav, index) => {
-                                        return <li key={index}><a href={nav.href}>{nav.name}</a></li>
-                                    })}</ul>
-                                </div>
-                            </Container>
-                        </div>
+                                {navLinks.map((nav, index) => {
+                                    return <ListItem key={nav.name}>
+                                        <ListItemButton>
+                                            <ListItemText><Typography>{nav.name}</Typography></ListItemText>
+                                            <ListItemIcon>
+                                                <SvgIcon color='primary'>
+                                                    <IoIosArrowForward />
+                                                </SvgIcon>
+                                            </ListItemIcon>
+                                        </ListItemButton>
+                                    </ListItem>
+                                })}
+                            </List>
+                        </Box>
                     </Drawer>
                 </div>
             </div >

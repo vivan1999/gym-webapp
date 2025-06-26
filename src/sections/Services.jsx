@@ -11,15 +11,15 @@ import { TbCoinRupee } from "react-icons/tb";
 
 const Services = () => {
     return (
-        <section className='flex flex-row gap-20 max-lg:gap-4 overflow-x-auto justify-center items-center p-4'>
-            <Card className='w-[12vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
+        <section className='flex flex-row gap-20 max-lg:gap-4 justify-center items-center p-4'>
+            <Card className='w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
                 <CardMedia className='flex justify-center items-center'>
-                    <CgGym className='text-[2vw] max-lg:text-[5vw]' />
+                    <CgGym className='text-[7vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw]' />
                 </CardMedia>
-                <CardContent>
+                <CardContent sx={{ ':last-child': { paddingBottom: 0 }, paddingTop: { xs: 0.5, sm: 0.8, md: 3 } }}>
                     <Typography sx={{
                         fontSize: {
-                            xs: '1.8vw',  // small screens
+                            xs: '2vw',  // small screens
                             sm: '1.6vw',  // medium
                             md: '1.3vw',    // large
                         },
@@ -31,12 +31,12 @@ const Services = () => {
             </Card>
             <Card className='w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
                 <CardMedia className='flex justify-center items-center'>
-                    <TbCoinRupee className='text-[2vw] max-lg:text-[5vw]' />
+                    <TbCoinRupee className='text-[7vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw]' />
                 </CardMedia>
-                <CardContent>
+                <CardContent sx={{ ':last-child': { paddingBottom: 0 }, paddingTop: { xs: 0.5, sm: 0.8, md: 3 } }}>
                     <Typography sx={{
                         fontSize: {
-                            xs: '1.8vw',  // small screens
+                            xs: '2vw',  // small screens
                             sm: '1.6vw',  // medium
                             md: '1.3vw',    // large
                         },
@@ -48,12 +48,12 @@ const Services = () => {
             </Card>
             <Card className='w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
                 <CardMedia>
-                    <GiTeacher className='text-[2vw] max-lg:text-[5vw]' />
+                    <GiTeacher className='text-[7vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw]' />
                 </CardMedia>
-                <CardContent>
+                <CardContent sx={{ ':last-child': { paddingBottom: 0 }, paddingTop: { xs: 0.5, sm: 0.8, md: 3 } }}>
                     <Typography sx={{
                         fontSize: {
-                            xs: '1.8vw',  // small screens
+                            xs: '2vw',  // small screens
                             sm: '1.6vw',  // medium
                             md: '1.3vw',    // large
                         },
@@ -65,12 +65,12 @@ const Services = () => {
             </Card>
             <Card className='w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
                 <CardMedia >
-                    <HiUserGroup className='text-[2vw] max-lg:text-[5vw]' />
+                    <HiUserGroup className='text-[7vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw]' />
                 </CardMedia>
-                <CardContent>
+                <CardContent sx={{ ':last-child': { paddingBottom: 0 }, paddingTop: { xs: 0.5, sm: 0.8, md: 3 } }}>
                     <Typography sx={{
                         fontSize: {
-                            xs: '1.8vw',  // small screens
+                            xs: '2vw',  // small screens
                             sm: '1.6vw',  // medium
                             md: '1.3vw',    // large
                         },
