@@ -30,17 +30,17 @@ const Navbar = () => {
     return (
         <AppBar position="sticky" sx={{ backgroundColor: "black", padding: 3 }}>
             <div className='flex justify-between items-center w-full max-w-full'>
-                <div><Typography>Classic Health</Typography></div>
+                <div><Typography color='primary'>Classic Health</Typography></div>
                 <div className='gap-6 hidden lg:flex'>
                     <ul className='flex gap-6'>{navLinks.map((nav) => {
-                        return <li><a href={nav.href}>{nav.name}</a></li>
+                        return <li><a href={nav.href}><Typography color='primary'>{nav.name}</Typography></a></li>
                     })}
                         <li>
-                            <Typography onClick={handleClick}>Membership Options</Typography>
-                            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                                <MenuItem><Typography color='black'>Week Pass</Typography></MenuItem>
-                                <MenuItem><Typography color='black'>Bring a guest</Typography></MenuItem>
-                                <MenuItem><Typography color='black'>All Other Options</Typography></MenuItem>
+                            <Typography color='primary' onClick={handleClick}>Membership Options</Typography>
+                            <Menu color='secondary' anchorEl={anchorEl} open={open} onClose={handleClose}>
+                                <MenuItem><Typography color='primary'>Week Pass</Typography></MenuItem>
+                                <MenuItem><Typography color='primary'>Bring a guest</Typography></MenuItem>
+                                <MenuItem><Typography color='primary'>All Other Options</Typography></MenuItem>
                             </Menu>
                         </li>
                     </ul>

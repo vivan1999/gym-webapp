@@ -12,48 +12,76 @@ import { TbCoinRupee } from "react-icons/tb";
 const Services = () => {
     return (
         <section className='flex flex-row gap-20 max-lg:gap-4 overflow-x-auto justify-center items-center p-4'>
-            <Card className='w-[15vw] h-[15vw] max-lg:w-[30vw] max-lg:h-[15vh] justify-center items-center flex flex-col' sx={{ background: 'linear-gradient(to bottom right, white, #d1d6e0)', borderRadius: 30 }} >
-                <CardMedia >
-                    <CgGym size={50} />
+            <Card className='w-[12vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
+                <CardMedia className='flex justify-center items-center'>
+                    <CgGym className='text-[2vw] max-lg:text-[5vw]' />
                 </CardMedia>
                 <CardContent>
-                    <Typography variant='body1'>
+                    <Typography sx={{
+                        fontSize: {
+                            xs: '1.8vw',  // small screens
+                            sm: '1.6vw',  // medium
+                            md: '1.3vw',    // large
+                        },
+                        textAlign: 'center',
+                    }} variant='body1'>
                         Top Equipments
                     </Typography>
                 </CardContent>
             </Card>
-            <Card className='w-[15vw] h-[15vw] max-lg:w-[30vw] max-lg:h-[15vh] justify-center items-center flex flex-col' sx={{ background: 'linear-gradient(to bottom right, white, #d1d6e0)', borderRadius: 30 }} >
-                <CardMedia >
-                    <TbCoinRupee size={50} />
+            <Card className='w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
+                <CardMedia className='flex justify-center items-center'>
+                    <TbCoinRupee className='text-[2vw] max-lg:text-[5vw]' />
                 </CardMedia>
                 <CardContent>
-                    <Typography variant='body1'>
+                    <Typography sx={{
+                        fontSize: {
+                            xs: '1.8vw',  // small screens
+                            sm: '1.6vw',  // medium
+                            md: '1.3vw',    // large
+                        },
+                        textAlign: 'center',
+                    }} variant='body1'>
                         Low Cost
                     </Typography>
                 </CardContent>
             </Card>
-            <Card className='w-[15vw] h-[15vw] max-lg:w-[30vw] max-lg:h-[15vh] justify-center items-center flex flex-col' sx={{ background: 'linear-gradient(to bottom right, white, #d1d6e0)', borderRadius: 30 }} >
-                <CardMedia >
-                    <GiTeacher size={50} />
+            <Card className='w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
+                <CardMedia>
+                    <GiTeacher className='text-[2vw] max-lg:text-[5vw]' />
                 </CardMedia>
                 <CardContent>
-                    <Typography variant='body1'>
+                    <Typography sx={{
+                        fontSize: {
+                            xs: '1.8vw',  // small screens
+                            sm: '1.6vw',  // medium
+                            md: '1.3vw',    // large
+                        },
+                        textAlign: 'center',
+                    }} variant='body1'>
                         Personal Coaching
                     </Typography>
                 </CardContent>
             </Card>
-            <Card className='w-[15vw] h-[15vw] max-lg:w-[30vw] max-lg:h-[15vh] justify-center items-center flex flex-col' sx={{ background: 'linear-gradient(to bottom right, white, #d1d6e0)', borderRadius: 30 }} >
+            <Card className='w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
                 <CardMedia >
-                    <HiUserGroup size={50} />
+                    <HiUserGroup className='text-[2vw] max-lg:text-[5vw]' />
                 </CardMedia>
                 <CardContent>
-                    <Typography variant='body1'>
+                    <Typography sx={{
+                        fontSize: {
+                            xs: '1.8vw',  // small screens
+                            sm: '1.6vw',  // medium
+                            md: '1.3vw',    // large
+                        },
+                        textAlign: 'center',
+                    }} variant='body1'>
                         Community Feel
                     </Typography>
                 </CardContent>
             </Card>
 
-        </section>
+        </section >
     )
 }
 
