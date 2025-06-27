@@ -11,32 +11,32 @@ import { TbCoinRupee } from "react-icons/tb";
 
 const Services = () => {
     return (
-        <section className='flex flex-row gap-20 max-lg:gap-4 justify-center items-center p-4'>
-            <Card className='w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
+        <section className='flex flex-row gap-20 max-lg:gap-4 justify-center items-center p-4 w-full overflow-scroll'>
+            <Card className='min-w-[70px] min-h-[70px] w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
                 <CardMedia className='flex justify-center items-center'>
                     <CgGym className='text-[7vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw]' />
                 </CardMedia>
                 <CardContent sx={{ ':last-child': { paddingBottom: 0 }, paddingTop: { xs: 0.5, sm: 0.8, md: 3 } }}>
                     <Typography sx={{
                         fontSize: {
-                            xs: '2vw',  // small screens
+                            xs: '2.5vw',  // small screens
                             sm: '1.6vw',  // medium
                             md: '1.3vw',    // large
                         },
                         textAlign: 'center',
-                    }} variant='body1'>
+                    }} >
                         Top Equipments
                     </Typography>
                 </CardContent>
             </Card>
-            <Card className='w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
+            <Card className='min-w-[70px] min-h-[70px] w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
                 <CardMedia className='flex justify-center items-center'>
                     <TbCoinRupee className='text-[7vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw]' />
                 </CardMedia>
                 <CardContent sx={{ ':last-child': { paddingBottom: 0 }, paddingTop: { xs: 0.5, sm: 0.8, md: 3 } }}>
                     <Typography sx={{
                         fontSize: {
-                            xs: '2vw',  // small screens
+                            xs: '2.5vw',  // small screens
                             sm: '1.6vw',  // medium
                             md: '1.3vw',    // large
                         },
@@ -46,14 +46,14 @@ const Services = () => {
                     </Typography>
                 </CardContent>
             </Card>
-            <Card className='w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
+            <Card className=' min-w-[70px] min-h-[70px] w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
                 <CardMedia>
                     <GiTeacher className='text-[7vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw]' />
                 </CardMedia>
                 <CardContent sx={{ ':last-child': { paddingBottom: 0 }, paddingTop: { xs: 0.5, sm: 0.8, md: 3 } }}>
                     <Typography sx={{
                         fontSize: {
-                            xs: '2vw',  // small screens
+                            xs: '2.5vw',  // small screens
                             sm: '1.6vw',  // medium
                             md: '1.3vw',    // large
                         },
@@ -63,14 +63,14 @@ const Services = () => {
                     </Typography>
                 </CardContent>
             </Card>
-            <Card className='w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
+            <Card className='min-w-[70px] min-h-[70px] w-[15vw] h-[15vw] max-lg:w-[20vw] max-lg:h-[20vw] justify-center items-center flex flex-col' sx={{ background: (theme) => theme.palette.secondary.main, borderRadius: '50%' }} >
                 <CardMedia >
                     <HiUserGroup className='text-[7vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw]' />
                 </CardMedia>
                 <CardContent sx={{ ':last-child': { paddingBottom: 0 }, paddingTop: { xs: 0.5, sm: 0.8, md: 3 } }}>
                     <Typography sx={{
                         fontSize: {
-                            xs: '2vw',  // small screens
+                            xs: '2.5vw',  // small screens
                             sm: '1.6vw',  // medium
                             md: '1.3vw',    // large
                         },

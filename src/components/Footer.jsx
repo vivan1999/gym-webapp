@@ -74,7 +74,7 @@ const Footer = () => {
                             <img className='w-full h-full object-cover' src={logo} />
                         </div>
                         <form className='flex flex-col gap-4 justify-center items-center'>
-                            <TextField size='small' variant='outlined' color='primary' placeholder='Enter Email' sx={{ 'input::placeholder': { fontSize: { xs: 6, sm: 16 } }, fontSize: { xs: 6, sm: 16 } }}></TextField>
+                            <TextField size='small' variant='outlined' color='primary' placeholder='Enter Email' sx={{ 'input::placeholder': { fontSize: { xs: 8, sm: 16 } }, fontSize: { xs: 6, sm: 16 } }}></TextField>
                             <Button variant='outlined'><Typography sx={{ fontSize: { xs: 6, sm: 16 } }}>Subscribe</Typography></Button>
                         </form>
                     </div>

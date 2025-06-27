@@ -24,7 +24,8 @@ const Home = () => {
                 <Memberships />
             </section>
             <Footer />
-            <section className='relative items-center justify-items-center' style={{ backgroundColor: theme.palette.primary.main }}><Typography>Established in 2002</Typography>
+            <section className='relative items-center justify-items-center' style={{ backgroundColor: theme.palette.primary.main }}>
+                <Typography variant='body1'>Established in 2002</Typography>
             </section>
         </div>
     )

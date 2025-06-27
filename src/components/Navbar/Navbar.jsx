@@ -38,7 +38,7 @@ const Navbar = () => {
     return (
         <AppBar position="sticky" sx={{ backgroundColor: "#0f1923", padding: 1 }}>
             <div className='flex justify-between items-center w-full max-w-full'>
-                <div className='flex items-center w-[10vh] h-[8vh] md:w-[10vw] overflow-hidden'>
+                <div className='flex items-center w-[12vh] h-[8vh] md:w-[12vw] overflow-hidden'>
                     <img className='w-full h-full object-cover' src={logo} />
                 </div>
                 <div className='gap-6 hidden lg:flex'>
@@ -57,7 +57,7 @@ const Navbar = () => {
                 </div>
                 <div className='max-lg:hidden'>
                     <IconButton>
-                        <div className='flex gap-2'>
+                        <div className='flex gap-2 justify-center items-center'>
                             <IconButton>
                                 <SvgIcon color='primary' >
                                     <MdAccountCircle />
