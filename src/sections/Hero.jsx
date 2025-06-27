@@ -27,9 +27,9 @@ const Hero = () => {
             }}>
                 {/*<div color='secondary' className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-[30%] max-lg:w-[50%] box-border rounded-3xl flex justify-center items-center p-5 m-5 bg-gradient-to-r from-white to-gray-400'>*/}
                 <div className='justify-center items-center flex flex-col'>
-                    <Typography >Use Code : saver</Typography>
+                    <Typography variant='body1'>Use Code : saver</Typography>
                     <br />
-                    <Typography>
+                    <Typography variant='body1'>
                         Save on our 12 Month Membership
                     </Typography>
                     <br />

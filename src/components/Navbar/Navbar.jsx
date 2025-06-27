@@ -43,14 +43,14 @@ const Navbar = () => {
                 </div>
                 <div className='gap-6 hidden lg:flex'>
                     <ul className='flex gap-6'>{navLinks.map((nav) => {
-                        return <li><a href={nav.href}><Typography color='primary'>{nav.name}</Typography></a></li>
+                        return <li><a href={nav.href}><Typography variant='body1' color='primary'>{nav.name}</Typography></a></li>
                     })}
                         <li>
                             <Typography color='primary' onClick={handleClick}>Membership Options</Typography>
                             <Menu color='secondary' anchorEl={anchorEl} open={open} onClose={handleClose}>
-                                <MenuItem><Typography color='primary'>Week Pass</Typography></MenuItem>
-                                <MenuItem><Typography color='primary'>Bring a guest</Typography></MenuItem>
-                                <MenuItem><Typography color='primary'>All Other Options</Typography></MenuItem>
+                                <MenuItem><Typography color='primary' variant='body1'>Week Pass</Typography></MenuItem>
+                                <MenuItem><Typography color='primary' variant='body1'>Bring a guest</Typography></MenuItem>
+                                <MenuItem><Typography color='primary' variant='body1'>All Other Options</Typography></MenuItem>
                             </Menu>
                         </li>
                     </ul>
@@ -58,8 +58,12 @@ const Navbar = () => {
                 <div className='max-lg:hidden'>
                     <IconButton>
                         <div className='flex gap-2'>
-                            <MdAccountCircle color='white' />
-                            <Typography color='white'>Login</Typography>
+                            <IconButton>
+                                <SvgIcon color='primary' >
+                                    <MdAccountCircle />
+                                </SvgIcon>
+                            </IconButton>
+                            <Typography color='primary' variant='body1' >Login</Typography>
                         </div>
                     </IconButton>
                 </div>
@@ -80,14 +84,14 @@ const Navbar = () => {
                                             <MdAccountCircle />
                                         </SvgIcon>
                                     </IconButton>
-                                    <Typography>Login/Sign Up</Typography>
+                                    <Typography variant='body1' >Login/Sign Up</Typography>
                                 </div>
                                 {navLinks.map((nav, index) => {
                                     return <ListItem key={nav.name} sx={{ paddingRight: 0 }}>
-                                        <ListItemButton>
-                                            <ListItemText><Typography>{nav.name}</Typography></ListItemText>
-                                            <ListItemIcon>
-                                                <SvgIcon color='primary'>
+                                        <ListItemButton href='/buy-membership'>
+                                            <ListItemText><Typography variant='body1' >{nav.name}</Typography></ListItemText>
+                                            <ListItemIcon sx={{ justifyContent: 'flex-end' }}>
+                                                <SvgIcon color='primary' sx={{ width: 10 }}>
                                                     <IoIosArrowForward />
                                                 </SvgIcon>
                                             </ListItemIcon>

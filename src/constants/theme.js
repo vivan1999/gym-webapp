@@ -10,15 +10,12 @@ const theme = createTheme({
         body1:{
             fontSize:16,
             '@media (max-width:350px)':{
-                fontSize:8
+                fontSize:12
             },
             '@media (min-width:350px)':{
-                fontSize:10
-            },
-            '@media (min-width:768px)':{
                 fontSize:14
             },
-            '@media (min-width:1024px)':{
+            '@media (min-width:768px)':{
                 fontSize:16
             }
         },

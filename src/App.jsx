@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import { ThemeProvider } from '@emotion/react'
 import theme from './constants/theme'
+import BuyPlan from './pages/BuyPlan'
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
             <Route path="/" element={<Home />}>
             </Route>
             <Route path="*" element={<NotFound />}>
+            </Route>
+            <Route path="/buy-membership" element={<BuyPlan />}>
             </Route>
           </Routes>
         </BrowserRouter>
