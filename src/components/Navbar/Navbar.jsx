@@ -70,11 +70,11 @@ const Navbar = () => {
                     <Drawer anchor='right' open={openDrawer} onClose={handleDrawer}>
 
                         <Box className='w-[70vw] h-full' role="presentation" sx={{ background: '#0f1923' }} >
-                            <div className='flex items-center w-full h-[10.5vh] sm:h-[30vh] m-2'>
+                            <div className='flex items-center w-full h-[12vh] sm:h-[30vh] m-2'>
                                 <img className='w-full h-full object-cover' src={logo} />
                             </div>
                             <List sx={{ paddingTop: 5 }}>
-                                <div className='flex items-center'>
+                                <div className='flex items-center pl-5'>
                                     <IconButton>
                                         <SvgIcon color='primary' >
                                             <MdAccountCircle />
@@ -83,7 +83,7 @@ const Navbar = () => {
                                     <Typography>Login/Sign Up</Typography>
                                 </div>
                                 {navLinks.map((nav, index) => {
-                                    return <ListItem key={nav.name}>
+                                    return <ListItem key={nav.name} sx={{ paddingRight: 0 }}>
                                         <ListItemButton>
                                             <ListItemText><Typography>{nav.name}</Typography></ListItemText>
                                             <ListItemIcon>

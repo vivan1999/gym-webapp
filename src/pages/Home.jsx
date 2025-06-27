@@ -4,8 +4,11 @@ import Hero from '../sections/Hero'
 import Services from '../sections/Services'
 import Memberships from '../sections/Memberships'
 import Footer from '../components/Footer'
+import { useTheme } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
 
 const Home = () => {
+    const theme = useTheme()
     return (
         <div>
             <section>
@@ -21,7 +24,7 @@ const Home = () => {
                 <Memberships />
             </section>
             <Footer />
-            <section className='bg-amber-50 relative items-center justify-items-center'><p>Established in 2002</p>
+            <section className='relative items-center justify-items-center' style={{ backgroundColor: theme.palette.primary.main }}><Typography>Established in 2002</Typography>
             </section>
         </div>
     )
