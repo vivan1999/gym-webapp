@@ -12,9 +12,6 @@ const Home = () => {
     return (
         <div>
             <section>
-                <Navbar />
-            </section>
-            <section>
                 <Hero />
             </section>
             <section>
@@ -22,10 +19,6 @@ const Home = () => {
             </section>
             <section>
                 <Memberships />
-            </section>
-            <Footer />
-            <section className='relative items-center justify-items-center' style={{ backgroundColor: theme.palette.primary.main }}>
-                <Typography variant='body1'>Established in 2002</Typography>
             </section>
         </div>
     )

@@ -19,6 +19,7 @@ import SvgIcon from '@mui/material/SvgIcon'
 import logo from '../../assets/logo.png'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import { IoIosArrowForward } from "react-icons/io";
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     const [anchorEl, setAnchorEl] = useState(null)
@@ -39,7 +40,9 @@ const Navbar = () => {
         <AppBar position="sticky" sx={{ backgroundColor: "#0f1923", padding: 1 }}>
             <div className='flex justify-between items-center w-full max-w-full'>
                 <div className='flex items-center w-[12vh] h-[8vh] md:w-[12vw] overflow-hidden'>
-                    <img className='w-full h-full object-cover' src={logo} />
+                    <Link to='/'>
+                        <img className='w-full h-full object-cover' src={logo} />
+                    </Link>
                 </div>
                 <div className='gap-6 hidden lg:flex'>
                     <ul className='flex gap-6'>{navLinks.map((nav) => {
@@ -56,16 +59,14 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='max-lg:hidden'>
-                    <IconButton>
-                        <div className='flex gap-2 justify-center items-center'>
-                            <IconButton>
-                                <SvgIcon color='primary' >
-                                    <MdAccountCircle />
-                                </SvgIcon>
-                            </IconButton>
-                            <Typography color='primary' variant='body1' >Login</Typography>
-                        </div>
-                    </IconButton>
+                    <div className='flex gap-2 justify-center items-center'>
+                        <IconButton>
+                            <SvgIcon color='primary' >
+                                <MdAccountCircle />
+                            </SvgIcon>
+                        </IconButton>
+                        <Typography color='primary' variant='body1' >Login</Typography>
+                    </div>
                 </div>
                 <div className='lg:hidden'>
                     <IconButton onClick={handleDrawer}>
