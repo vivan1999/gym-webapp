@@ -48,14 +48,6 @@ const Navbar = () => {
                     <ul className='flex gap-6'>{navLinks.map((nav) => {
                         return <li><a href={nav.href}><Typography variant='body1' color='primary'>{nav.name}</Typography></a></li>
                     })}
-                        <li>
-                            <Typography color='primary' onClick={handleClick}>Membership Options</Typography>
-                            <Menu color='secondary' anchorEl={anchorEl} open={open} onClose={handleClose}>
-                                <MenuItem><Typography color='primary' variant='body1'>Week Pass</Typography></MenuItem>
-                                <MenuItem><Typography color='primary' variant='body1'>Bring a guest</Typography></MenuItem>
-                                <MenuItem><Typography color='primary' variant='body1'>All Other Options</Typography></MenuItem>
-                            </Menu>
-                        </li>
                     </ul>
                 </div>
                 <div className='max-lg:hidden'>
@@ -89,7 +81,7 @@ const Navbar = () => {
                                 </div>
                                 {navLinks.map((nav, index) => {
                                     return <ListItem key={nav.name} sx={{ paddingRight: 0 }}>
-                                        <ListItemButton href='/buy-membership'>
+                                        <ListItemButton href={nav.href}>
                                             <ListItemText><Typography variant='body1' >{nav.name}</Typography></ListItemText>
                                             <ListItemIcon sx={{ justifyContent: 'flex-end' }}>
                                                 <SvgIcon color='primary' sx={{ width: 10 }}>

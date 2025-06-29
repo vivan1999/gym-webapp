@@ -6,6 +6,7 @@ import { ThemeProvider } from '@emotion/react'
 import theme from './constants/theme'
 import BuyPlan from './pages/BuyPlan'
 import Layout from './Layout'
+import AllMemberships from './pages/AllMemberships'
 
 function App() {
   return (
@@ -15,9 +16,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />}></Route>
+              <Route path='/memberships' element={<AllMemberships />} />
+              <Route path="/buy-membership" element={<BuyPlan />} />
               <Route path="*" element={<NotFound />}>
-              </Route>
-              <Route path="/buy-membership" element={<BuyPlan />}>
               </Route>
             </Route>
           </Routes>
