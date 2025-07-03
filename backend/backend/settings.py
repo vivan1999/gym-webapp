@@ -91,7 +91,7 @@ DATABASES = {
         #"PASSWORD":os.environ.get("DB_PWD")
     #}
     "default":dj_database_url.config(
-        default=os.environ.get("DB_URL")
+        default=os.environ.get("DATABASE_URL")
     )
 }
 
