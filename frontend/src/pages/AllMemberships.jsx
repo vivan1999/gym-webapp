@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography'
 import React from 'react'
-import { memberships } from '../constants'
+import { memberships } from '../constants/index'
 import MembershipCard from '../components/MembershipCard'
 
 const AllMemberships = () => {

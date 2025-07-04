@@ -7,6 +7,8 @@ import theme from './constants/theme'
 import BuyPlan from './pages/BuyPlan'
 import Layout from './Layout'
 import AllMemberships from './pages/AllMemberships'
+import LogIn from './pages/LogIn'
+import ProtectedRoutes from './components/ProtectedRoutes'
 
 function App() {
   return (
@@ -14,10 +16,11 @@ function App() {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Routes>
+            <Route path="/login" element={<LogIn />} />
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />}></Route>
               <Route path='/memberships' element={<AllMemberships />} />
-              <Route path="/buy-membership" element={<BuyPlan />} />
+              <Route path="/buy-membership" element={<ProtectedRoutes><BuyPlan /></ProtectedRoutes>} />
               <Route path="*" element={<NotFound />}>
               </Route>
             </Route>

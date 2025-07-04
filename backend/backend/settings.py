@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 import os
 import dj_database_url
@@ -32,6 +33,23 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS = ["https://gym-webapp-production.up.railway.app/"]
+
+# JWT Token settings
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+}
+
 
 # Application definition
 
@@ -77,11 +95,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
+DB_LIVE = os.getenv("DB_LIVE")
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-DATABASES = {
+if DB_LIVE in ["False", False]:
+    DATABASES = {
+        "default":{
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR/"db.sqlite3"
+        }
+    }
+else:
+    DATABASES = {
    #"default": {
     #    "ENGINE": "django.db.backends.sqlite3",
     #    "NAME": BASE_DIR / "db.sqlite3",
@@ -96,9 +120,10 @@ DATABASES = {
     #}
     "default":dj_database_url.config(
         default=os.environ.get("DATABASE_URL")
-    )
-}
+    )}
 
+# Database
+# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

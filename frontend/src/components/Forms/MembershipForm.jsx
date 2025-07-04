@@ -14,7 +14,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import Radio from '@mui/material/Radio'
 import Checkbox from '@mui/material/Checkbox'
 import FormHelperText from '@mui/material/FormHelperText'
-import { memberships } from '../../constants'
+import { memberships } from '../../constants/index'
 import { useSearchParams } from 'react-router-dom'
 import api from '../../api'
 
@@ -45,7 +45,8 @@ const MembershipForm = () => {
         agreement: Yup.boolean().oneOf([true], "You must accept the terms and conditions.").required("You must accept the terms and conditions.")
     })
     const { control, handleSubmit, setValue, formState: { errors } } = useForm({
-        resolver: yupResolver(validationSchema), defaultValues: {
+        resolver: yupResolver(validationSchema),
+        defaultValues: {
             email_id: "",
             title: "Mr",
             first_name: "",
@@ -75,7 +76,6 @@ const MembershipForm = () => {
         '& .MuiInputLabel-root': {
             color: (theme) => theme.palette.secondary.main,
         },
-
     };
 
 
