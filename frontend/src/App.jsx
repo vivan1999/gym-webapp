@@ -9,6 +9,7 @@ import Layout from './Layout'
 import AllMemberships from './pages/AllMemberships'
 import LogIn from './pages/LogIn'
 import ProtectedRoutes from './components/ProtectedRoutes'
+import Completed from './pages/Completed'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route index element={<Home />}></Route>
               <Route path='/memberships' element={<AllMemberships />} />
               <Route path="/buy-membership" element={<ProtectedRoutes><BuyPlan /></ProtectedRoutes>} />
+              <Route path="/registered" element={<Completed />}></Route>
               <Route path="*" element={<NotFound />}>
               </Route>
             </Route>

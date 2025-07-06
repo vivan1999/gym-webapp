@@ -12,7 +12,7 @@ const Home = () => {
     const theme = useTheme()
     return (
         <div>
-            <section>
+            <section className='pt-5 pb-8'>
                 <Hero />
             </section>
             <section>

@@ -1,16 +1,50 @@
 import React from 'react'
-import gym_hero from "../assets/gym_hero.jpg"
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box';
+import sliderImage1 from '../assets/sliderImage1.png'
+import sliderImage2 from '../assets/sliderImage2.png'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from 'react-router-dom'
 
 
 const Hero = () => {
+    const navigate = useNavigate()
+
+    var settings = {
+        autoplay: true,
+        autoplaySpeed: 4000,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
+
+    const images = [
+        { src: sliderImage1, alt: 'Fitness Goals', link: '/buy-membership' },
+        { src: sliderImage2, alt: 'Train Hard', link: '/buy-membership' }
+    ];
+
     return (
-        <section className='relative w-full gap-2 h-[76vh] max-lg:h-[50vh]'>
-            <img className='absolute h-[75vh] max-lg:h-[50vh] w-full object-cover' src={gym_hero}></img>
-            <Box sx={{
+        <section className='relative w-full gap-2 lg:h-[76vh] md:h-[50vh] sm:h-[35vh] max-sm:h-[25vh]'>
+            <Slider {...settings}>
+                {images.map((item, index) => {
+                    return <div key={index} onClick={() => navigate(item.link)} className="cursor-pointer">
+                        <img
+                            src={item.src}
+                            alt={item.alt}
+                            className=" lg:h-[75vh] md:h-[50vh] sm:h-[35vh] max-sm:h-[25vh] w-full object-fill"
+                        />
+                    </div>
+
+                })}
+            </Slider>
+
+            {/*<Box sx={{
                 position: 'absolute',
                 left: '50%',
                 top: '50%',
@@ -25,7 +59,7 @@ const Hero = () => {
                 padding: '1.25rem',
                 margin: '1.25rem',
             }}>
-                {/*<div color='secondary' className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-[30%] max-lg:w-[50%] box-border rounded-3xl flex justify-center items-center p-5 m-5 bg-gradient-to-r from-white to-gray-400'>*/}
+                // comment => <div color='secondary' className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-[30%] max-lg:w-[50%] box-border rounded-3xl flex justify-center items-center p-5 m-5 bg-gradient-to-r from-white to-gray-400'>
                 <div className='justify-center items-center flex flex-col'>
                     <Typography variant='body1'>Use Code : saver</Typography>
                     <br />
@@ -35,7 +69,7 @@ const Hero = () => {
                     <br />
                     <Button variant='contained' color="secondary">Join Now</Button>
                 </div>
-            </Box>
+            </Box>*/}
         </section >
     )
 }

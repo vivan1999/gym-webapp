@@ -15,13 +15,15 @@ import Radio from '@mui/material/Radio'
 import Checkbox from '@mui/material/Checkbox'
 import FormHelperText from '@mui/material/FormHelperText'
 import { memberships } from '../../constants/index'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import api from '../../api'
 
 const MembershipForm = () => {
     const titleOptions = ["Mr", "Mrs", "Miss"]
     const [searchParams] = useSearchParams()
     const selectedMembership = searchParams.get("membership")
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         setValue('memberships', selectedMembership)
@@ -85,6 +87,7 @@ const MembershipForm = () => {
             if (res.status == 200) {
                 console.log(res)
                 console.log(res.data)
+                navigate('/registered')
             }
         }).catch((err) => {
             console.log(err)

@@ -9,8 +9,10 @@ import List from '@mui/material/List'
 import logo from '../assets/logo.png'
 import TextField from '@mui/material/TextField'
 import theme from '../constants/theme'
+import { useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+    const navigate = useNavigate()
     return (
         <>
             <footer className='w-full bg-black p-4 max-sm:p-1' style={{ backgroundColor: "#0f1923" }}>
@@ -20,27 +22,27 @@ const Footer = () => {
                             <div >
                                 <List sx={{ padding: 0, justifyContent: 'start', paddingRight: 1 }}>
                                     <ListItem sx={{ padding: 0 }}>
-                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }}>
+                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }} onClick={() => navigate('/timings')}>
                                             <ListItemText><Typography variant='body1' color='primary'>Opening Hours</Typography></ListItemText>
                                         </ListItemButton>
                                     </ListItem>
                                     <ListItem sx={{ padding: 0 }}>
-                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }}>
+                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }} onClick={() => navigate('/about')}>
                                             <ListItemText><Typography variant='body1' color='primary'>About Us</Typography></ListItemText>
                                         </ListItemButton>
                                     </ListItem >
                                     <ListItem sx={{ padding: 0 }}>
-                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }}>
+                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }} onClick={() => navigate('/contact')}>
                                             <ListItemText><Typography variant='body1' color='primary'>Contact Us</Typography></ListItemText>
                                         </ListItemButton>
                                     </ListItem>
                                     <ListItem sx={{ padding: 0 }}>
-                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }}>
+                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }} onClick={() => navigate('/privacy-policy')}>
                                             <ListItemText><Typography variant='body1' color='primary'>Privacy Policy</Typography></ListItemText>
                                         </ListItemButton>
                                     </ListItem >
                                     <ListItem sx={{ padding: 0 }}>
-                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }}>
+                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }} onClick={() => navigate('/terms-of-use')}>
                                             <ListItemText><Typography variant='body1' color='primary'>Terms Of Use</Typography></ListItemText>
                                         </ListItemButton>
                                     </ListItem>
@@ -49,23 +51,23 @@ const Footer = () => {
                             <div >
                                 <List sx={{ padding: 0, justifyContent: 'start' }}>
                                     <ListItem sx={{ padding: 0 }}>
-                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }}>
+                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }} onClick={() => navigate('/memberships')}>
                                             <ListItemText><Typography variant='body1' color='primary'>Membership Options</Typography></ListItemText>
                                         </ListItemButton>
                                     </ListItem>
                                     <ListItem sx={{ padding: 0 }}>
-                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }}>
+                                        <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }} onClick={() => navigate('/personal-coaching')}>
                                             <ListItemText><Typography variant='body1' color='primary'>Personal Coaching</Typography></ListItemText>
                                         </ListItemButton>
                                     </ListItem>
                                     <ListItem sx={{ padding: 0 }}>
                                         <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }}>
-                                            <ListItemText><Typography variant='body1' color='primary'>Bring a Guest</Typography></ListItemText>
+                                            <ListItemText><Typography variant='body1' color='primary' onClick={() => navigate('/bring-a-guest')}>Bring a Guest</Typography></ListItemText>
                                         </ListItemButton>
                                     </ListItem>
                                     <ListItem sx={{ padding: 0 }}>
                                         <ListItemButton sx={{ padding: { xs: 0, sm: 1 } }}>
-                                            <ListItemText><Typography variant='body1' color='primary'>Refer & Earn</Typography></ListItemText>
+                                            <ListItemText><Typography variant='body1' color='primary' onClick={() => navigate('/refer')}>Refer & Earn</Typography></ListItemText>
                                         </ListItemButton>
                                     </ListItem>
                                 </List>

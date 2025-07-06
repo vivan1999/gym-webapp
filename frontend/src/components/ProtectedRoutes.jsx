@@ -51,7 +51,7 @@ function ProtectedRoutes({ children }) {
     }
 
     if (isAuthorized == null) {
-        return <LoadingSpinner />
+        return <div className="h-[70vh] w-full items-center justify-items-center pt-30"><LoadingSpinner /></div>
     }
 
     return isAuthorized ? children : <Navigate to="/login" />
