@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
@@ -9,10 +9,18 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from 'react-router-dom'
+import LoadingSpinner from '../components/Loader/LoadingSpinner';
 
 
 const Hero = () => {
     const navigate = useNavigate()
+    const [imageLoaded, setImageLoading] = useState(false)
+
+    useEffect(() => {
+        if (sliderImage1) {
+            setImageLoading(true)
+        }
+    }, [sliderImage1])
 
     var settings = {
         autoplay: true,
@@ -30,15 +38,15 @@ const Hero = () => {
     ];
 
     return (
-        <section className='relative w-full gap-2 lg:h-[76vh] md:h-[50vh] sm:h-[35vh] max-sm:h-[25vh]'>
+        <section className='relative w-full gap-2 lg:h-[76vh] md:h-[50vh] sm:h-[35vh] max-sm:h-[25vh] overflow-hidden'>
             <Slider {...settings}>
                 {images.map((item, index) => {
                     return <div key={index} onClick={() => navigate(item.link)} className="cursor-pointer">
-                        <img
+                        {!imageLoaded ? <div className=' items-center justify-items-center lg:h-[75vh] md:h-[50vh] sm:h-[35vh] max-sm:h-[25vh] w-full object-fill'><LoadingSpinner /></div> : <img
                             src={item.src}
                             alt={item.alt}
                             className=" lg:h-[75vh] md:h-[50vh] sm:h-[35vh] max-sm:h-[25vh] w-full object-fill"
-                        />
+                        />}
                     </div>
 
                 })}
