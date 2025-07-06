@@ -83,8 +83,22 @@ const MembershipForm = () => {
 
     const onSubmit = (data) => {
         console.log(data)
-        api.post('/api/add_member/', data).then((res) => {
-            if (res.status == 200) {
+        const payload = {
+            email_id: data.email_id,
+            first_name: data.first_name,
+            last_name: data.last_name,
+            phone_number: Number(data.phone_number),
+            dob: data.dob,
+            gender: data.gender,
+            address: data.address,
+            medical_condition: data.medication,
+            medications: data.medication === "Yes" ? data.medicationInfo : "",
+            membership: data.memberships, // assuming it's the ID
+            add_on_services: data.services
+        }
+        console.log(payload)
+        api.post('/api/add_member/', payload).then((res) => {
+            if (res.status == 201) {
                 console.log(res)
                 console.log(res.data)
                 navigate('/registered')
@@ -176,7 +190,7 @@ const MembershipForm = () => {
                             <FormLabel>Choose Membership Plan :</FormLabel>
                             <RadioGroup row {...field}>
                                 {memberships.map((value) => {
-                                    return <FormControlLabel value={value.title} control={<Radio />} label={value.title}></FormControlLabel>
+                                    return <FormControlLabel value={value.index} control={<Radio />} label={value.title}></FormControlLabel>
                                 })}
                             </RadioGroup>
                             <FormHelperText>{errors.memberships?.message}</FormHelperText>

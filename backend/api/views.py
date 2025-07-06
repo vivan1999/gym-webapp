@@ -33,8 +33,7 @@ class AddNewMember(CreateAPIView):
 
     def perform_create(self, serializer):
         if serializer.is_valid:
-            instance= serializer.save(user=self.request.user)
-            return Response(instance.data)
+            serializer.save(user=self.request.user)
         else:
             return Response(serializer.errors)
         

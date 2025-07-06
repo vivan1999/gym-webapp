@@ -14,9 +14,9 @@ export const navLinks = [
 ]
 
 export const memberships=[
-    {title:"Student", subTitle: "Avail Student Offers & Get extra 10% OFF on any membership.", image:student_pass},
-    {title:"1 Month", subTitle:"Avail 1 Month membership offer at just 2000 Rs.", image: months1gym},
-    {title:"3 Months", subTitle: "Avail 3 months membership offer at just 5000 Rs.", image: months3gym},
-    {title:"6 Months", subTitle: "Avail 6 months membership offer at just 8000 Rs.", image:months6gym},
-    {title:"1 Year", subTitle: "Avail 1 Year membership offer at just 14000 Rs.", image:months12gym}
+    {index:0,title:"Student", subTitle: "Avail Student Offers & Get extra 10% OFF on any membership.", image:student_pass},
+    {index:1,title:"1 Month", subTitle:"Avail 1 Month membership offer at just 2000 Rs.", image: months1gym},
+    {index:2,title:"3 Months", subTitle: "Avail 3 months membership offer at just 5000 Rs.", image: months3gym},
+    {index:3,title:"6 Months", subTitle: "Avail 6 months membership offer at just 8000 Rs.", image:months6gym},
+    {index:4,title:"1 Year", subTitle: "Avail 1 Year membership offer at just 14000 Rs.", image:months12gym}
 ]
