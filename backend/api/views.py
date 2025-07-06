@@ -7,6 +7,7 @@ from rest_framework.decorators import api_view
 from .serializers import MemberSerializer,MembershipSerializer,UserSerailizer
 from rest_framework.generics import CreateAPIView, ListCreateAPIView
 from django.contrib.auth.models import User
+from rest_framework.permissions import AllowAny
 
 @api_view(["GET"])
 def get_api(request, *args, **kwargs):
@@ -29,6 +30,7 @@ def post_api(request,*args):
 class AddNewUser(CreateAPIView):
     queryset = User
     serializer_class = UserSerailizer
+    permission_classes = [AllowAny]
 
 class AddNewMembership(ListCreateAPIView):
     queryset = Membership.objects.all()

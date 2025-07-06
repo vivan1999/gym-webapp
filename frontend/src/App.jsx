@@ -16,7 +16,8 @@ function App() {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Routes>
-            <Route path="/login" element={<LogIn />} />
+            <Route path="/login" element={<LogIn method={'login'} />} />
+            <Route path="/register" element={<LogIn method={'register'} />} />
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />}></Route>
               <Route path='/memberships' element={<AllMemberships />} />

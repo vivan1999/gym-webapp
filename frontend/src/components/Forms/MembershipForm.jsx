@@ -47,7 +47,7 @@ const MembershipForm = () => {
     const { control, handleSubmit, setValue, formState: { errors } } = useForm({
         resolver: yupResolver(validationSchema),
         defaultValues: {
-            email_id: "",
+            email_id: localStorage.getItem('email') ? localStorage.getItem('email') : "",
             title: "Mr",
             first_name: "",
             last_name: "",
