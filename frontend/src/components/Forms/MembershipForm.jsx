@@ -83,7 +83,7 @@ const MembershipForm = () => {
 
     const onSubmit = (data) => {
         console.log(data)
-        api.post('/api/post/', data).then((res) => {
+        api.post('/api/add_member/', data).then((res) => {
             if (res.status == 200) {
                 console.log(res)
                 console.log(res.data)

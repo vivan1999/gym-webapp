@@ -26,6 +26,17 @@ def post_api(request,*args):
             serializer.save()
             print(serializer.data)
             return Response(serializer.data)
+
+class AddNewMember(CreateAPIView):
+    queryset= Members.objects.all()
+    serializer_class = MemberSerializer
+
+    def perform_create(self, serializer):
+        if serializer.is_valid:
+            instance= serializer.save(user=self.request.user)
+            return Response(instance.data)
+        else:
+            return Response(serializer.errors)
         
 class AddNewUser(CreateAPIView):
     queryset = User
